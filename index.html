@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 23rd Birthday My Love</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #ff758c 0%, #ff7eb3 100%);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+    }
+    
+    .container {
+      text-align: center;
+      position: relative;
+      z-index: 10;
+      max-width: 800px;
+    }
+    
+    h1 {
+      font-size: 5rem;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    h2 {
+      font-size: 3rem;
+      color: white;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.3);
+      margin-bottom: 30px;
+    }
+    
+    .photo-frame {
+      width: 300px;
+      height: 300px;
+      background: white;
+      margin: 0 auto 30px;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      position: relative;
+      overflow: hidden;
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    .photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+    
+    .message {
+      color: white;
+      font-size: 1.5rem;
+      margin: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      max-width: 600px;
+      margin: 0 auto 40px;
+      line-height: 1.6;
+    }
+    
+    .heart {
+      position: absolute;
+      color: #ff4d4d;
+      font-size: 25px;
+      animation: floatHeart 6s ease-in-out infinite;
+      z-index: 1;
+    }
+    
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      z-index: 0;
+      animation: confettiFall 5s linear infinite;
+    }
+    
+    .cake {
+      margin: 40px auto;
+      position: relative;
+      width: 200px;
+      height: 160px;
+    }
+    
+    .cake-bottom {
+      width: 200px;
+      height: 60px;
+      background: #fcbad3;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 0;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .cake-middle {
+      width: 170px;
+      height: 50px;
+      background: #ff9eb5;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 60px;
+      left: 15px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .cake-top {
+      width: 140px;
+      height: 40px;
+      background: #fcbad3;
+      border-radius: 10px;
+      position: absolute;
+      bottom: 110px;
+      left: 30px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+    
+    .candle {
+      width: 8px;
+      height: 35px;
+      background: #fdfd96;
+      position: absolute;
+      bottom: 150px;
+      left: 96px;
+      border-radius: 4px;
+    }
+    
+    .flame {
+      width: 15px;
+      height: 30px;
+      background: #ff7518;
+      border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+      position: absolute;
+      bottom: 185px;
+      left: 92.5px;
+      animation: flicker 0.5s ease-in-out infinite alternate;
+      box-shadow: 0 0 20px #ff7518, 0 0 40px #ff7518;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+    
+    @keyframes flicker {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(0.9);
+        opacity: 0.8;
+      }
+    }
+    
+    @keyframes floatHeart {
+      0% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-20px) rotate(10deg);
+      }
+      100% {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+    
+    @keyframes confettiFall {
+      0% {
+        transform: translateY(-10px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+    
+    /* Heart animation */
+    .heart-icon {
+      position: absolute;
+      fill: #ff4d4d;
+      width: 30px;
+      height: 30px;
+      opacity: 0;
+      animation: floatUp 4s ease-in-out infinite;
+    }
+    
+    @keyframes floatUp {
+      0% {
+        transform: translateY(100px);
+        opacity: 0;
+      }
+      20% {
+        opacity: 0.8;
+      }
+      80% {
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(-100px);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Happy 23rd Birthday</h1>
+    <h2>My Love</h2>
+    
+    <div class="photo-frame">
+      <!-- Replace the placeholder image with your actual image -->
+      <img src="love.jpg" alt="Couple Photo" class="photo" id="couplePhoto">
+    </div>
+    
+    <p class="message">
+      Every moment with you is a gift. Thank you for filling my life with love and happiness.
+      On your special day, I celebrate the wonderful person you are and the joy you bring to my world.
+      Happy Birthday, my love!
+    </p>
+    
+    <div class="cake">
+      <div class="cake-bottom"></div>
+      <div class="cake-middle"></div>
+      <div class="cake-top"></div>
+      <div class="candle"></div>
+      <div class="flame"></div>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Create floating hearts
+      for (let i = 0; i < 30; i++) {
+        createHeart();
+      }
+      
+      // Create confetti
+      for (let i = 0; i < 50; i++) {
+        createConfetti();
+      }
+      
+      // Create animated hearts around the photo
+      createHeartAnimations();
+    });
+    
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.innerHTML = '❤';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.top = Math.random() * 100 + 'vh';
+      heart.style.animationDelay = Math.random() * 5 + 's';
+      heart.style.opacity = Math.random() * 0.5 + 0.5;
+      document.body.appendChild(heart);
+    }
+    
+    function createConfetti() {
+      const colors = ['#FFC0CB', '#FF69B4', '#FF1493', '#DB7093', '#C71585'];
+      const confetti = document.createElement('div');
+      confetti.className = 'confetti';
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.top = -10 + 'px';
+      confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+      confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+      confetti.style.animationDelay = Math.random() * 5 + 's';
+      document.body.appendChild(confetti);
+    }
+    
+    function createHeartAnimations() {
+      const photoFrame = document.querySelector('.photo-frame');
+      const frameRect = photoFrame.getBoundingClientRect();
+      
+      for (let i = 0; i < 10; i++) {
+        const heartIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        heartIcon.classList.add('heart-icon');
+        heartIcon.setAttribute('viewBox', '0 0 24 24');
+        
+        const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+        path.setAttribute('d', 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z');
+        
+        heartIcon.appendChild(path);
+        document.body.appendChild(heartIcon);
+        
+        const left = frameRect.left + (Math.random() * frameRect.width);
+        const delay = Math.random() * 5;
+        
+        heartIcon.style.left = left + 'px';
+        heartIcon.style.bottom = '100px';
+        heartIcon.style.animationDelay = delay + 's';
+      }
+    }
+  </script>
+</body>
+</html>
